@@ -4,7 +4,7 @@ const Promise = require('bluebird');
 
 const BASE_URL = 'https://api.huobi.pro';
 // 此地址用于国内不翻墙调试
-const BASE_URL = 'https://api.huobi.br.com';
+//const BASE_URL = 'https://api.huobi.br.com';
 
 var orderbook = {};
 
