@@ -48,4 +48,4 @@ function check() {
 // rest和ws在引用后都会自行启动
 // 可以通过ws.OrderBook和rest.OrderBook获取当前的行情深度
 // 等待爬虫数据稳定(约3秒)后，开始比较两者的数据差异
-setTimeout(check, 3000);
+//setTimeout(check, 3000);
