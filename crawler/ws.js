@@ -3,9 +3,9 @@ const WebSocket = require('ws');
 const pako = require('pako');
 const SaveData = require('../saveData');
 
-// const WS_URL = 'wss://api.huobi.pro/ws';
+const WS_URL = 'wss://api.huobi.pro/ws';
 // 此地址用于国内不翻墙调试
-const WS_URL = 'wss://api.huobi.br.com/ws';
+//const WS_URL = 'wss://api.huobi.br.com/ws';
 
 var orderbook = {};
 
