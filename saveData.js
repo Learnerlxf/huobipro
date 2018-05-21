@@ -1,13 +1,13 @@
 const fs = require('fs');
 const mysql = require('mysql');
-
+const config = require('./config/default');
 
 var mysqlPool  = mysql.createPool({  
   connectionLimit : 10,  
-  host            : '172.96.204.159',  
-  user            : 'root',  
-  password        : '123456',  
-  database        : 'huobipro'  
+  host            : config.mysql.mysqlHost,  
+  user            : config.mysql.mysqlUser,  
+  password        : config.mysql.mysqlPassword,  
+  database        : config.mysql.mysqlDatabase,  
 }); 
 
 var SaveData = {
