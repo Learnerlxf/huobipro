@@ -57,7 +57,7 @@ function call_api(method, path, payload, body) {
 
         if (method == 'GET') {
             http.get(url, {
-                timeout: 1000,
+                timeout: 5000,
                 headers: headers
             }).then(data => {
                 let json = JSON.parse(data);
@@ -74,7 +74,7 @@ function call_api(method, path, payload, body) {
             });
         } else if (method == 'POST') {
             http.post(url, body, {
-                timeout: 1000,
+                timeout: 5000,
                 headers: headers
             }).then(data => {
                 let json = JSON.parse(data);

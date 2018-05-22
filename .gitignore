@@ -4,3 +4,4 @@ config
 data
 package-lock.json
 start.sh
+.ipynb_checkpoints

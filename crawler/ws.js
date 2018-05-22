@@ -30,6 +30,7 @@ function handle(data) {
 }
 
 function subscribe(ws) {
+    //let symbols = ['htusdt','btcusdt','bchusdt','ethusdt','etcusdt','ltcusdt','eosusdt','xrpusdt','omgusdt','dashusdt','zecusdt','iotausdt','adausdt','steemusdt'];
     let symbols = ['htusdt'];
     let steps = ['step0','step1','step2','step3','step4','step5'];
     let periods = ['1min','5min','15min','30min','60min','1day','1mon','1week','1year'];

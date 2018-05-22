@@ -33,6 +33,30 @@ for i in range(len(result)):
 
 import numpy as np
 import pandas as pd
+
+f = open('./data/market.htusdt.trade.detail','r')#以读方式打开文件  
+result = list()  
+for line in f.readlines():                          #依次读取每行  
+    line = line.strip()                             #去掉每行头尾空白  
+    if not len(line) or line.startswith('#'):       #判断是否是空行或注释行  
+        continue                                    #是的话，跳过不处理  
+    result.append(line)                             #保存
+print result 
+
+allTrade = []
+for i in range(len(result)):
+    trade = json.loads(result[i])
+    for j in range(len(trade['tick']['data'])):  
+        oneTrade = []
+        d = trade['tick']['data'][j]
+        oneTrade.append(d['id'])
+        oneTrade.append(d['price'])
+        oneTrade.append(d['amount'])
+        oneTrade.append(d['direction'])
+        oneTrade.append(d['ts'])
+        allTrade.append(oneTrade)
+
+        
 tradeDF = pd.DataFrame(allTrade)
 tradeDF.columns = ['id','price','amount','direction','ts']
 print tradeDF.head(20)

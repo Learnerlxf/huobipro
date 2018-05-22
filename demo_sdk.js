@@ -8,13 +8,13 @@ function run() {
     // trade_password 可以先不填，提现时需要
 
     // 第一步，获取account_id_pro
-    hbsdk.get_account().then(console.log);
+    //hbsdk.get_account().then(console.log);
     // 运行demo，看控制台的输出结果
     // 把get_account获取到的type=spot的id填写到:
     // default.json中的${account_id_pro}中去
 
     // 第二步，获取Balance和OpenOrders
-    // hbsdk.get_balance().then(console.log);
+    hbsdk.get_balance().then(console.log);
     // hbsdk.get_open_orders('btcusdt').then(console.log);
 
     // 第三步，交易
