@@ -62,7 +62,7 @@ function call_api(method, path, payload, body) {
             }).then(data => {
                 let json = JSON.parse(data);
                 if (json.status == 'ok') {
-                    console.log(json.data);
+                    //console.log(json.data);
                     resolve(json.data);
                 } else {
                     console.log('调用错误', json);
@@ -79,7 +79,7 @@ function call_api(method, path, payload, body) {
             }).then(data => {
                 let json = JSON.parse(data);
                 if (json.status == 'ok') {
-                    console.log(json.data);
+                    //console.log(json.data);
                     resolve(json.data);
                 } else {
                     console.log('调用错误', json);
@@ -121,6 +121,23 @@ var HUOBI_PRO = {
         var payload = sign_sha('GET', URL_HUOBI_PRO, path, body);
         return call_api('GET', path, payload, body);
     },
+    get_timestamp: function(){
+        var path = `/v1/common/timestamp`;
+        var body = {};
+        var payload = null;
+        return call_api('GET', path, payload, body);
+    },
+    buy_market: function(symbol, amount) {
+        var path = '/v1/order/orders/place';
+        var body = get_body();
+        var payload = sign_sha('POST', URL_HUOBI_PRO, path, body);
+
+        body["account-id"] = config.huobi.account_id_pro;
+        body.type = "buy-market";
+        body.amount = amount;
+        body.symbol = symbol;
+        return call_api('POST', path, payload, body);
+    },
     buy_limit: function(symbol, amount, price) {
         var path = '/v1/order/orders/place';
         var body = get_body();
@@ -131,20 +148,27 @@ var HUOBI_PRO = {
         body.amount = amount;
         body.symbol = symbol;
         body.price = price;
-
+        return call_api('POST', path, payload, body);
+    },
+    sell_market: function(symbol, amount) {
+        var path = '/v1/order/orders/place';
+        var body = get_body();
+        var payload = sign_sha('POST', URL_HUOBI_PRO, path, body);
+        body["account-id"] = config.huobi.account_id_pro;
+        body.type = "sell-market";
+        body.amount = amount;
+        body.symbol = symbol;
         return call_api('POST', path, payload, body);
     },
     sell_limit: function(symbol, amount, price) {
         var path = '/v1/order/orders/place';
         var body = get_body();
         var payload = sign_sha('POST', URL_HUOBI_PRO, path, body);
-
         body["account-id"] = config.huobi.account_id_pro;
         body.type = "sell-limit";
         body.amount = amount;
         body.symbol = symbol;
         body.price = price;
-
         return call_api('POST', path, payload, body);
     },
     withdrawal: function(address, coin, amount, payment_id) {

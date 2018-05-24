@@ -23,6 +23,8 @@ function handle(data) {
         case 'kline':
             //console.log('kline', data.tick);
             break;
+        case 'trade':
+            console.log('trade', data);
     }
     let data_ch = data.ch;
     delete data.ch;

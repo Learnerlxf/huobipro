@@ -2,7 +2,7 @@ const hbsdk = require('./sdk/hbsdk');
 
 // 按注释的步骤逐步放开注释，运行程序，验证接口
 function run() {
-    // 准备工作，填写config/default.json中的:
+    // 准备工作，填写config/default.json中的:pr
     // access_key & secretkey, www.huobi.com上申请
     // uid 登陆后看自己的UID
     // trade_password 可以先不填，提现时需要
@@ -14,11 +14,13 @@ function run() {
     // default.json中的${account_id_pro}中去
 
     // 第二步，获取Balance和OpenOrders
-    hbsdk.get_balance().then(console.log);
+    //hbsdk.get_balance().then(console.log);
     // hbsdk.get_open_orders('btcusdt').then(console.log);
 
     // 第三步，交易
-    // hbsdk.buy_limit('ltcusdt', 0.01, 0.1);
+    //hbsdk.buy_limit('htusdt', 0.1, 0.1).then(console.log);
+
+    hbsdk.sell_market('htusdt', 0.16375640).then(console.log);
     // 注意交易是有精度的，精度数据在以下接口中获取
     // https://api.huobi.pro/v1/common/symbols
 
