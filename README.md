@@ -63,3 +63,5 @@ https://github.com/magicdlf/huobipro
 可以使用我的邀请码注册火币，邀请人会收到一定比例的佣金返还。(有效期限注册后的六个月内)
 https://www.huobipro.com/zh-cn/topic/invited/?invite_code=2z223
 
+https://www.codesheep.cn/2018/12/27/kubeadm-k8s1-13-1/
+
