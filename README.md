@@ -27,3 +27,4 @@ https://www.codesheep.cn/2018/12/27/kubeadm-k8s1-13-1/
 
 
 https://docs.docker-cn.com/engine/installation/linux/docker-ce/centos/#使用镜像仓库进行安装
+
