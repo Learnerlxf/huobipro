@@ -11,5 +11,10 @@ pipeline {
                 sh 'npm --version'
             }
         }
+        stage('Deploy') {
+            steps {
+                sh 'node'
+            }
+        }
     }
 }
