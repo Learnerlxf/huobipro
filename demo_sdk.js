@@ -1,6 +1,7 @@
 const hbsdk = require('./sdk/hbsdk');
 
 
+
 // 按注释的步骤逐步放开注释，运行程序，验证接口
 function run() {
     // 准备工作，填写config/default.json中的:pr
